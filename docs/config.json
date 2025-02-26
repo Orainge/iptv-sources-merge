@@ -1,0 +1,44 @@
+{
+	"name": "默认直播源（底板）",
+	"fileName": "default.txt",
+	"sourceConfigUrl": "http://127.0.0.1:30000/zby_generate/sources/default.json",
+	"categoryConfigUrl": "http://127.0.0.1:30000/zby_generate/category/default.json",
+	"enableSourceConfigUrlProxy": false,
+	"enableCategoryConfigUrlProxy": false,
+	"excludeSourceUrlKeyword": ["^rtp:","^http(s)?://raw.git","^http://dbiptv.[\\s\\S]+.chinamobile.com","vd4.bdstatic.com","edge6a.v2h-cdn.com","iptv.luas.edu.cn","www.238311.top","iptv.hiper25.com","yang-1989.eu.org", "qwas.eatuo.com","epg.112114.xyz","cztv.com","gztv.com","tv.iill.top","doudou.php","www.mhq3vvv.work.gd","198\\.16\\.100\\.90","50\\.7\\.238\\.114","113\\.64\\.145\\.195","39\\.134","39\\.135", "116\\.162\\.6\\.191", "116\\.162\\.6\\.192"],
+	"checkConnection": true,
+	"excludeCheckConnectionUrlKeyword": ["192\\.168\\.5\\.200:1234", "192\\.168\\.5\\.200:19001", "orainge\\.net", "substatic\\.top", "tdm\\.com\\.mo", "rthktv3", "douyucdn", "hkdvb\\.com", "aktv\\.top",  "olelive\\.com", "132\\.us\\.kg", "v1\\.mk"],
+	"urlType": {
+		"v4": {
+			"enable": true
+		},
+		"v6": {
+			"enable": true
+		},
+		"domain": {
+			"enable": true,
+			"checkIpType": false
+		}
+	},
+	"proxy": {
+		"enable": false,
+		"api": {
+			"url": "http://127.0.0.1:17800/api/proxy/getUrl",
+			"method": "POST",
+			"data": {
+				"TMP": "${timestamp}",
+				"ATK": "USYWKSOS",
+				"URL": "${url}",
+				"SVN": "IPXA1",
+				"ENP": "${externalProxy}"
+			}
+		},
+		"filter": [{
+			"urlType": ["v4", "v6", "domain"],
+			"category":  ["港澳"],
+			"channelName": ["澳门"],
+			"channelUrl": ["*"],
+			"externalProxy": true
+		}]
+	}
+}

@@ -1,0 +1,20 @@
+server:
+  port: 19980
+
+# log 级别
+logging:
+  level:
+    "com.orainge.iptv.sources_merge": INFO
+    "com.orainge.tools": INFO
+
+server-config:
+  external-proxy:
+    server-list:
+      - url: "127.0.0.1"
+        port: 1080
+        type: "http"
+        host:
+          - "*"
+
+ip-sources-merge:
+  no-source-url: http://127.0.0.1/no-signal

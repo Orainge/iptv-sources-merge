@@ -1,0 +1,16 @@
+server-config:
+  #  external-proxy:
+  #    server-list:
+  #      - url: "127.0.0.1"
+  #        port: 7890
+  #        type: "socks5"
+  #        host:
+  #          - "*"
+  request:
+    skip-ssl-verification: false
+    read-timeout: 30
+    connect-timeout: 30
+    max-request-redirect: 10
+    user-agent: "okhttp/3.15"
+    buffer-size: 16
+    retry-times: 2

@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "name": "官方直播源",
+        "category": ["体育", "新闻"],
+        "channel": ["CCTV-5", "CCTV-13"],
+        "enableProxy": false,
+        "url": "http://example.com/live/source1.txt"
+    },
+    {
+        "id": "2",
+        "name": "地方频道",
+        "category": ["地方频道"],
+        "channel": ["*"],
+        "enableProxy": true,
+        "url": "http://example.com/live/local_channels.txt"
+    }
+]
