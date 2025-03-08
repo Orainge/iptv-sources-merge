@@ -94,7 +94,11 @@ public class RequestServiceImpl implements RequestService {
                                      String categoryName,
                                      String channelName) {
         // 直播源 URL
-        String url = channelSourceItem.getUrl();
+        String originalUrl = channelSourceItem.getUrl();
+
+        // 如果 URL 中包含 $，应该去掉之后再连接测试
+        int lastIndex = originalUrl.lastIndexOf('$');
+        String url = (lastIndex != -1) ? originalUrl.substring(0, lastIndex) : originalUrl;
 
         try {
             // 请求结果
